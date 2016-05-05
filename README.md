@@ -7,6 +7,19 @@
 Got tired of Fortran not having high level containers.
 
 
+## API
+
+Currently implemented types are `vector_double` and `vector_int`.
+
+They support the methods
+`init`,
+`clear`,
+`length`,
+`push`,
+`pop`, and
+`at`.
+
+
 ## Example
 
 See [test.f90](../master/test/test.f90).
