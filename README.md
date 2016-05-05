@@ -5,3 +5,8 @@
 # fortran-collections
 
 Got tired of Fortran not having high level containers.
+
+
+## Example
+
+See [test.f90](../master/test/test.f90).
