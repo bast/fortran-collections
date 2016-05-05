@@ -33,6 +33,8 @@ program test
     call assert(v2%pop() == 1)
     call assert(v2%length() == 0)
 
+    call v2%clear()
+
 contains
 
     subroutine assert(condition)
