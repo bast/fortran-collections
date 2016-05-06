@@ -13,13 +13,11 @@ Currently implemented types are `vector_double` and `vector_int`.
 
 They support the methods
 `init`,
-`clear`,
-`length`,
 `push`,
-`pop`, and
-`at`.
+`pop`,
+`at`,
+`length`,
+`clear`, and
+`delete`.
 
-
-## Example
-
-See [test.f90](../master/test/test.f90).
+Check out an [example](../master/test/test.f90).
