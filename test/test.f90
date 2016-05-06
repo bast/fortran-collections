@@ -33,7 +33,14 @@ program test
     call assert(v2%pop() == 1)
     call assert(v2%length() == 0)
 
-    call v2%clear()
+    call v1%delete()
+    call v2%delete()
+
+    call v1%init()
+    call v1%push(5.0d0)
+    call assert(v1%length() == 1)
+    call assert(v1%at(v1%length()) == 5.0d0)
+    call v1%delete()
 
 contains
 
