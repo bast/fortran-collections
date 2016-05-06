@@ -16,6 +16,7 @@ module collections
         procedure :: init
         procedure :: clear
         procedure :: length
+        procedure :: delete
     end type
 
     type, extends(vector) :: vector_double
@@ -63,6 +64,18 @@ contains
         integer :: n
         n = v%l
     end function
+
+    subroutine delete(v)
+        interface vector_delete
+            subroutine vector_delete(context) bind (c)
+                import :: c_ptr
+                type(c_ptr), value :: context
+            end subroutine
+        end interface
+        class(vector) :: v
+        call vector_delete(v%context)
+        v%l = 0
+    end subroutine
 
     subroutine push_double(v, d)
         use, intrinsic :: iso_c_binding, only: c_double

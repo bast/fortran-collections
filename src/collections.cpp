@@ -7,6 +7,7 @@ extern "C" {
 
     vector_context_t *vector_init();
     void vector_clear(vector_context_t *context);
+    void vector_delete(vector_context_t *context);
 
     void vector_push_double(vector_context_t *context, const double d);
     void vector_push_int(vector_context_t *context, const int i);
@@ -29,6 +30,8 @@ class Vector
 
         Vector();
         ~Vector();
+
+        void clear();
 
         void push_double(const double d);
         void push_int(const int i);
@@ -58,12 +61,23 @@ Vector::Vector()
 }
 
 
-void vector_clear(vector_context_t *context)
+void vector_delete(vector_context_t *context)
 {
     if (!context) return;
     delete AS_TYPE(Vector, context);
 }
 Vector::~Vector()
+{
+    v_double.clear();
+    v_int.clear();
+}
+
+
+void vector_clear(vector_context_t *context)
+{
+    return AS_TYPE(Vector, context)->clear();
+}
+void Vector::clear()
 {
     v_double.clear();
     v_int.clear();
