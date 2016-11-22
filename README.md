@@ -4,7 +4,10 @@
 
 # fortran-collections
 
-Got tired of Fortran not having high level containers.
+Got tired of Fortran not having high level containers. Uses C++ vectors under
+the hood.
+
+Contributions are most welcome!
 
 
 ## API
